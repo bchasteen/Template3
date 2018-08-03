@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>Redirect</title>
+	
+	<variable-list>
+		<variable name="breadcrumb" type="text" prompt="Page Breadcrumb" alt="Displayed above the footer. Used to calculate page title."></variable>
+		<variable name="destination" type="text" prompt="Destination URL" alt="The URL you want this Redirect to go to."></variable>
+		<!-- A safer way to create a file, forces PCF file extension -->
+		<variable name="pcf-filename" prompt="Filename" alt="Enter a filename using only lowercase letters, underscores, or dashes">untitled</variable>
+	</variable-list>
+	
+	<template-list>
+		<template 
+			prompt-prefix="Page"
+			filename="{pcf-filename}"
+			display-filename="no"
+			extension="pcf">redirect.tmpl</template>
+	</template-list>
+</tcf>

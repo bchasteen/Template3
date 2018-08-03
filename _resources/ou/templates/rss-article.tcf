@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>News Item</title>
+	
+	<variable-list>
+		<!-- general page setup -->
+		<variable section="File Setup" name="breadcrumb" type="text" prompt="Breadcrumb/Heading" alt="Important. Page breadcrumb/heading and RSS item title."></variable>
+		<variable name="pcf-filename" prompt="Filename" alt="Enter a filename using only lowercase letters, underscores, or dashes"></variable>
+		<variable section="RSS Setup" name="desc" type="text" rows="3" prompt="Description" alt="Important. Enter a short description of the article, to be used by the RSS item."></variable>
+		<variable name="author" type="text" prompt="Author" alt="Optional. Specify the author of the article."></variable>
+		<variable name="murl" type="filechooser" path="/_resources/images/news" prompt="Image" alt="Select the full-size image for the RSS item."></variable>
+		<variable name="mthumbnail" type="filechooser" path="/_resources/images/news" prompt="Thumbnail" alt="Select a corresponding thumbnail for this RSS item."></variable>
+		<variable name="category" type="tag" prompt="Tags" alt="Enter categories for this article."></variable>
+		<!-- A safer way to create a file, forces PCF file extension -->
+		<variable name="tcf-file" type="text" prompt="PCF Filename" display="no">/_resources/ou/templates/rss-article.tcf</variable>
+		<include>_nav-vars.inc</include>
+		<include>_common-vars.inc</include>
+	</variable-list>
+	
+	<template-list>
+		<template 
+			prompt-prefix="Page"
+			filename="{pcf-filename}"
+			display-filename="no"
+			extension="pcf"
+			rss-feed="*inherit*"
+			rss-link="[auto]"
+			rss-author="{author}"
+			rss-title="{breadcrumb}" 
+			rss-description="{desc}" 
+			rss-tags="{category}"
+			rss-media="{breadcrumb}^^{murl}^^{desc}^^{mthumbnail}^^{desc}"
+			tags="{category}"
+			autonav="{navigation}">rss-article.tmpl</template>
+	</template-list>
+	<navigation-list>
+		<include>_nav-list.inc</include>
+	</navigation-list>
+</tcf>

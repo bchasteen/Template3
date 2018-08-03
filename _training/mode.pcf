@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_training/xsl/mode.xsl" title="Interior Page" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+<document>
+	<nums>
+		<num>01</num>
+		<num>02</num>
+		<num>03</num>
+		<num>04</num>
+		<num>05</num>
+		<num>06</num>
+		<num>07</num>
+		<num>08</num>
+		<num>09</num>
+		<num>10</num>
+		<num>11</num>
+		<num>12</num>
+	</nums>
+</document>

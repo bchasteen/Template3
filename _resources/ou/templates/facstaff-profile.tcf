@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>Profile</title>
+	
+	<variable-list>
+		<!-- general page setup -->
+		<variable section="File Setup" name="breadcrumb" type="text" prompt="Page Breadcrumb" alt="Used to calculate page title."></variable>
+		<!-- A safer way to create a file, forces PCF file extension -->
+		<variable name="pcf-filename" prompt="Filename" alt="Enter a filename using only lowercase letters, underscores, or dashes">untitled</variable>
+		<variable name="rss-feed" prompt="RSS Feed" alt="Select the RSS feed to display for showing recent publications by this author." type="filechooser" path="/_resources/rss" lockout="yes">/_resources/rss/news.xml</variable>
+		
+		<variable section="Profile Setup" name="name" type="text" prompt="Faculty/Staff Name" alt="Enter the person's full name."></variable>
+		<variable name="job-title" type="text" prompt="Job Title" alt="Enter the person's job title."></variable>
+		<variable name="phone-number" type="text" prompt="Phone" alt="Enter the phone number format:(999) 999-9999.  Separate multiple phone numbers with a semicolon."></variable>
+		<variable name="email" type="text" prompt="Email" alt="Enter the email address. Separate multiple addresses with a semicolon."></variable>
+		<variable name="people-category" type="select" prompt="Listing Category" alt="Select the faculty/staff listing category">
+			<option value="faculty-adjunct" selected="false">Adjunct Faculty</option>
+			<option value="admin" selected="false">Administration</option>
+			<option value="faculty" selected="true">Faculty</option>
+			<option value="faculty-parttime" selected="false">Part Time Faculty</option>
+			<option value="staff" selected="false">Staff</option>
+			<option value="student" selected="false">Student</option>
+		</variable>
+		<variable name="tcf-file" type="text" prompt="PCF Filename" display="no">/_resources/ou/templates/facstaff-profile.tcf</variable>
+		<include>_nav-vars.inc</include>
+		<include>_common-vars.inc</include>
+	</variable-list>
+	
+	<template-list>
+		<template 
+			prompt-prefix="Page"
+			filename="{pcf-filename}"
+			display-filename="no"
+			extension="pcf"
+			rss-feed="*inherit*"
+			rss-link="[auto]"
+			rss-author="{author}"
+			rss-title="{breadcrumb}" 
+			rss-description="{desc}" 
+			rss-media="{breadcrumb}^^{murl}^^{desc}^^{mthumbnail}^^{desc}"
+			rss-tags="{people-category}, {pcf-filename}"
+			tags="{people-category}, {pcf-filename}"
+			autonav="{navigation}">facstaff-profile.tmpl</template>
+	</template-list>
+	
+	<navigation-list>
+		<include>_nav-list.inc</include>
+	</navigation-list>
+	
+</tcf>

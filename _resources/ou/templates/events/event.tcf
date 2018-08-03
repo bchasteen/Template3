@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>Event</title>
+	
+	<variable-list>
+		<!-- A safer way to create a file, forces PCF file extension -->
+		<variable section="File Setup" name="pcf-filename" prompt="Filename" alt="Enter a filename using only lowercase letters, underscores, or dashes"></variable>
+		<!-- general page setup -->
+		<variable section="RSS Setup" name="rss-feed" type="filechooser" path="/rss" prompt="RSS Feed Path" alt="Choose an RSS feed" lockout="yes">/_resources/rss/events.xml</variable>
+		<variable name="breadcrumb" type="text" prompt="Breadcrumb/Title" alt="Important. Page breadcrumb/heading and RSS item title."></variable>
+		<variable name="desc" type="text" rows="3" prompt="Description" alt="Important. Enter a short description of the article, to be used by the RSS item."></variable>
+		<variable name="author" type="text" prompt="Author" alt="Optional. Specify the author of the article."></variable>
+		<variable name="murl" type="filechooser" path="/_resources/files/images" prompt="Image" alt="Select the full-size image for the RSS item." display="no"></variable>
+		<variable name="mthumbnail" type="filechooser" path="/_resources/files/images" prompt="Thumbnail" alt="Select a corresponding thumbnail for this RSS item." display="no"></variable>
+		<variable name="start-date" type="datetime" format="iso" prompt="Publish/Start Date" alt="Select the Publish/Start Date"></variable>
+		<variable name="end-date" type="datetime" format="iso" prompt="Event End Date" alt="Select the Event End Date (leave blank if event is only for one day)."></variable>
+		<variable name="hopen" display="no"><endDate></variable>
+		<variable name="hclose" display="no"></endDate></variable>
+		<variable name="tags" type="tag" prompt="Tags" alt="Add tags to this article"></variable>
+		<variable section="Page Setup" name="layout" type="select" prompt="Page Layout" alt="Select a page layout." output="xml">
+			<option value="full-width" selected="false">Full Width</option>
+			<option value="two-column" selected="true">Two Column</option>
+		</variable>
+		<variable name="gallery-type" type="select" prompt="Gallery" alt="Select an LDP type to display, if a gallery asset is added to page." output="xml">
+			<option value="pretty" selected="true">Pretty Photo</option>
+		</variable>
+		<variable name="navigation" type="select" prompt="Add to Navigation?" alt="Do you want to create a link to this page in the local navigation?">
+			<option value="true" selected="false">Yes</option>
+			<option value="false" selected="true">No</option>
+		</variable>
+	</variable-list>
+	
+	<template-list>
+		<template 
+			prompt-prefix="Page"
+			filename="{pcf-filename}"
+			display-filename="no"
+			extension="pcf"
+			tags="{tags}"
+			rss-feed="{rss-feed}"
+			rss-link="[auto]"
+			rss-pubdate="{start-date}"
+			rss-author="{author}"
+			rss-title="{breadcrumb}" 
+			rss-description="{desc}" 
+			rss-tags="{tags}"
+			rss-extra="{hopen}{end-date}{hclose}"
+			rss-media="{breadcrumb}^^{murl}^^{desc}^^{mthumbnail}^^{desc}"
+			autonav="{navigation}">event.tmpl</template>
+	</template-list>
+	
+	<navigation-list>
+		<navigation name="true" path="_nav.inc" publish="no"><li><a href="{ox_autonav:shorturl}">{breadcrumb}</a></li></navigation>
+		<navigation name="false" path="_nav.inc" publish="no"></navigation>
+	</navigation-list>
+</tcf>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/directory/profile.xsl" title="Directory" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+	
+	<ouc:properties label="config">
+		<!-- general page setup -->
+		<parameter section="Faculty-Staff Info" name="breadcrumb" type="text" prompt="Page Breadcrumb" alt="Used to calculate page title."><!--%echo var="breadcrumb" --></parameter>
+		<parameter name="rss-feed" group="Faculty" prompt="RSS Feed" alt="Select the RSS feed to display. Default is directory feed." type="filechooser" path="/_resources/rss" lockout="yes"><!--%echo var="rss-feed" --></parameter>
+		<parameter section="Configuration" name="layout" type="select" group="Faculty" prompt="Page Layout" alt="Select a page layout.">
+			<!--%echo var="layout" encoding="none" --></parameter>
+		<parameter name="gallery-type" type="select" prompt="Gallery" alt="Select an LDP type to display, if a gallery asset is added to page." output="xml">
+			<!--%echo var="gallery-type" encoding="none" --></parameter>
+		<parameter name="protection" type="select" prompt="Page Protection" alt="Select Page Protection" output="xml">
+			<!--%echo var="protection" encoding="none" --></parameter>
+	</ouc:properties>
+	
+	<ouc:info><tcf><!--%echo var="tcf-file" --></tcf><tmpl>/_resources/ou/templates/facstaff-profile.tmpl</tmpl></ouc:info>
+	
+	<profile>
+		<ouc:div label="name" group="Faculty" button="hide"><ouc:multiedit type="text" prompt="Full Name" alt="Enter the person's full name"/><!--%echo var="name" --></ouc:div>
+		<ouc:div label="job-title" group="Faculty" button="hide"><ouc:multiedit type="text" prompt="Job Title" alt="Enter the person's job title"/><!--%echo var="job-title" --></ouc:div>
+		<ouc:div label="photo" group="Faculty" button="hide"><ouc:multiedit type="image" prompt="Profile Photo" alt="Upload a profile photo" path="/_resources/images/faculty" lockout="yes"/></ouc:div>
+		<ouc:div label="bio" group="Faculty" button="hide"><ouc:multiedit type="textarea" prompt="Enter your biographical information" alt="" rows="7" editor="yes"/></ouc:div>
+		<ouc:div label="degrees-held" group="Faculty" button="hide"><ouc:multiedit type="text" prompt="Degrees Held" alt="Enter all degrees held. Delimit each degree held by a semi-colon(;)." section=""/></ouc:div>
+		<ouc:div label="cv" group="Faculty" button="hide"><ouc:multiedit type="filechooser" prompt="Upload CV" alt="Choose the faculty member's Curriculum Vitae" path="/_resources/files/pdf" section=""/></ouc:div>
+		<ouc:div label="phone-number" group="Faculty" button="hide"><ouc:multiedit type="text" prompt="Phone" alt="Enter the phone number format:(999) 999-9999" section=""/><!--%echo var="phone-number" --></ouc:div>
+		<ouc:div label="email" group="Faculty" button="hide"><ouc:multiedit type="text" prompt="Email" alt="Enter the email address" section=""/><!--%echo var="email" --></ouc:div>
+		<ouc:div label="street" group="Faculty" button="hide"><ouc:multiedit type="text" prompt="Street" alt="Enter the street address" section=""/></ouc:div>
+		<ouc:div label="room-number" group="Faculty" button="hide"><ouc:multiedit type="text" prompt="Room Number" alt="Enter the room number" section=""/></ouc:div>
+	</profile>
+	
+	<ouc:div label="maincontent" group="Faculty" button-text="Main Content">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/></ouc:div>
+	<ouc:div label="leftcolumn" group="Faculty" button-text="Left Column" break="break">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="leftcolumn" break="break"/></ouc:div>
+	<ouc:div label="rightcolumn" group="Template2" button-text="Right Column">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="rightcolumn"/></ouc:div>
+</document>

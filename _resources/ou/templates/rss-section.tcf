@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>News Section</title>
+	
+	<variable-list>
+		<!-- general page setup -->
+		<variable section="Section Setup" name="breadcrumb" type="text" prompt="Section Breadcrumb" alt="Used to calculate page title."></variable>
+		<variable name="dirname"  prompt="Directory Name" alt="Enter the directory name that will be visible in OU Campus and in the URL. No special characters or spaces."></variable>
+		
+		<variable name="rss-feed" prompt="RSS Feed" alt="Select the RSS feed to display. Default is directory feed." type="filechooser" path="/_resources/rss" lockout="yes">/_resources/rss/news.xml</variable>
+		<variable name="rss-limit" prompt="RSS Limit" alt="Define the number of items to display. Default limit is 10.">10</variable>
+		<variable name="rss-pagination" prompt="Pagination" alt="Show or hide the pagination links" type="checkbox" output="xml">
+			<option selected="true" value="true">Show Pagination</option>
+		</variable>
+		<variable name="tcf-file" type="text" prompt="PCF Filename" display="no">/_resources/ou/templates/rss-section.tcf</variable>
+		<include>_section-nav-vars.inc</include>
+		<include>_common-vars.inc</include>
+	</variable-list>
+	
+	<!-- Use this to specify a template group for the new section. -->
+	<include>_directory-list.inc</include>
+	
+	
+	<template-list>
+		<!-- props and navigation files -->
+	    <include>_section-props.inc</include>
+		<template 
+			prompt-prefix="Page" 
+			filename="index" 
+			display-filename="no" 
+			extension="pcf" 
+			destination="{new_folder}" 
+			force-destination="yes" 
+			preferred-redirect="yes"
+			autonav="{navigation}"
+			tags="{tags}"
+			rss-feed="{rss-feed}">rss-landing.tmpl</template>
+		<include>_section-nav-inc.inc</include>
+	</template-list>
+
+	<navigation-list>
+		<include>_nav-list.inc</include>
+	</navigation-list>
+</tcf>

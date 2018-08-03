@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>Page</title>
+	
+	<variable-list>
+		<!-- general page setup -->
+		<variable name="breadcrumb" type="text" prompt="Page Breadcrumb" alt="Used to calculate page title."></variable>
+		<!-- A safer way to create a file, forces PCF file extension -->
+		<variable name="pcf-filename" prompt="Filename" alt="Enter a filename using only lowercase letters, underscores, or dashes">untitled</variable>
+		<variable name="tcf-file" type="text" prompt="PCF Filename" display="no">/_resources/ou/templates/interior.tcf</variable>
+		<include>_nav-vars.inc</include>
+		<include>_common-vars.inc</include>
+	</variable-list>
+	
+	<template-list>
+		<template 
+			prompt-prefix="Page"
+			filename="{pcf-filename}"
+			display-filename="no"
+			extension="pcf"
+			autonav="{navigation}">interior.tmpl</template>
+	</template-list>
+	<navigation-list>
+	<include>_nav-list.inc</include>
+</navigation-list>
+</tcf>

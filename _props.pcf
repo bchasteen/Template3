@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?pcf-stylesheet path="/_resources/xsl/properties.xsl" title="Properties" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<ouc:properties label="config">
+		<parameter name="breadcrumb" type="text" group="Template2" prompt="Page Title" alt="Page Title">Template 3</parameter>
+		<parameter name="image" type="filechooser" group="Template2" prompt="Section Image" alt="Select the image associated with this section." path="/_resources/files/images/section_images" lockout="yes">http://via.placeholder.com/450x300</parameter>
+	</ouc:properties>
+</document>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<superheroes>
+	<profile source="DC">
+		<name>Batman</name>
+		<alias>Bruce Wayne</alias>
+		<powers>money, technology, planning</powers>
+		<icon>batmobile</icon>
+	</profile>
+	<profile source="DC">
+		<name>Superman</name>
+		<alias>Kal El</alias>
+		<powers>super strength, flight, x-ray vision, frost-breath</powers>
+		<icon>family crest</icon>
+	</profile>
+	<profile source="DC">
+		<name>Green Arrow</name>
+		<alias>Oliver Queen</alias>
+		<powers>archery, planning, money</powers>
+		<icon>bow &amp; arrow</icon>
+	</profile>
+	<profile source="DC">
+		<name>Wonderwoman</name>
+		<alias>Diana Prince</alias>
+		<powers>super strength, flight, telepathy, bracelets</powers>
+		<icon>lasso</icon>
+	</profile>
+	<profile source="Marvel">
+		<name>Captain Marvel</name>
+		<alias>Carol Danvers</alias>
+		<powers>flight, super strength, durability, energy bursts</powers>
+		<icon>lightning bolt</icon>
+	</profile>
+	<profile source="Marvel">
+		<name>Spiderman</name>
+		<alias>Peter Parker</alias>
+		<powers>wit, agility, grip, perception</powers>
+		<icon>spiderweb</icon>
+	</profile>
+	<profile source="Marvel">
+		<name>Hulk</name>
+		<alias>Bruce Banner</alias>
+		<powers>strength, invincibility</powers>
+		<icon>fists</icon>
+	</profile>
+	<profile source="Marvel">
+		<name>Iron Man</name>
+		<alias>Tony Stark</alias>
+		<powers>intelligence, technology, money</powers>
+		<icon>mech suit</icon>
+	</profile>
+	<profile source="Marvel">
+		<name>Captain America</name>
+		<alias>Steve Rogers</alias>
+		<powers>super strength, minor regeneration, tactics</powers>
+		<icon>shield</icon>
+	</profile>
+</superheroes>

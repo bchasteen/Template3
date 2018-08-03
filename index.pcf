@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/home.xsl" title="Home Page" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+
+	<ouc:properties label="config">
+		<parameter name="show-jumbotron" type="checkbox" prompt="Show Jumbotron">
+<option value="true" selected="true"></option>
+</parameter>
+		<parameter name="show-main" type="checkbox" prompt="Show Main Content">
+<option value="true" selected="false"></option>
+</parameter>
+		<parameter name="show-welcome" type="checkbox" prompt="Show Welcome">
+<option value="true" selected="true"></option>
+</parameter>
+
+		<parameter name="show-two-divs" type="checkbox" prompt="Show Two Large Images with Links" section="Two Large Images">
+<option value="true" selected="true"></option>
+</parameter>
+		<parameter name="left-two-div" type="filechooser" prompt="Select the background image for the left image" path="/_resources/files/images/">https://placeimg.com/640/480/animals</parameter>
+		<parameter name="left-two-div-text" type="text" prompt="Type the text you would like to appear on the image">Photo 1</parameter>
+		<parameter name="left-two-div-url" type="filechooser" prompt="Select the linked URL for the left image" path="/">http://www.starwars.com</parameter>
+		<parameter name="right-two-div" type="filechooser" prompt="Select the background image for the right image" path="/_resources/files/images/">https://placeimg.com/640/480/nature</parameter>
+		<parameter name="right-two-div-text" type="text" prompt="Type the text you would like to appear on the image">Photo 2</parameter>
+		<parameter name="right-two-div-url" type="filechooser" prompt="Select the linked URL for the right image" path="/">http://www.uga.edu/</parameter>
+		
+		<parameter name="show-three-divs" type="checkbox" prompt="Show Three Large Images with Links" section="Three Large Images">
+<option value="true" selected="true"></option>
+</parameter>
+		<parameter name="left-three-div" type="filechooser" prompt="Select the background image for the left image" path="/_resources/files/images/">https://placeimg.com/640/480/people</parameter>
+		<parameter name="left-three-div-text" type="text" prompt="Type the text you would like to appear on the image">Photo 3</parameter>
+		<parameter name="left-three-div-url" type="filechooser" prompt="Select the linked URL for the left image" path="/">http://www.msn.com/</parameter>
+		<parameter name="middle-three-div" type="filechooser" prompt="Select the background image for the middle image" path="/_resources/files/images/">https://placeimg.com/640/480/arch</parameter>
+		<parameter name="middle-three-div-text" type="text" prompt="Type the text you would like to appear on the image">Photo 4</parameter>
+		<parameter name="middle-three-div-url" type="filechooser" prompt="Select the linked URL for the middle image" path="/">http://www.imdb.com/</parameter>
+		<parameter name="right-three-div" type="filechooser" prompt="Select the background image for the right image" path="/_resources/files/images/">https://placeimg.com/640/480/tech</parameter>
+		<parameter name="right-three-div-text" type="text" prompt="Type the text you would like to appear on the image">Photo 5</parameter>
+		<parameter name="right-three-div-url" type="filechooser" prompt="Select the linked URL for the right image" path="/">http://www.kotaku.com/</parameter>
+		
+		<parameter name="gallery-type" type="select" group="Template2" prompt="Gallery" alt="Select an LDP type to display, if a gallery asset is added to page." section="Gallery Options">
+<option value="pretty" selected="true">Pretty Photo</option>
+</parameter>
+	</ouc:properties>
+	<feature>
+		<ouc:div label="feature-title" group="Template2" button="hide"><ouc:multiedit type="text" prompt="Slide Title" alt="Title of the feature displayed above the description, max 100 characters." section="Feature Information"/>More Services with One Account</ouc:div>
+		<ouc:div label="feature-description" group="Template2" button="hide"><ouc:multiedit type="textarea" prompt="Feature Description" alt="Description of the post displayed below the title, max 300 characters." rows="4"/>Your UGAMail account includes email, OneDrive for Business (file collaboration tool and storage), and free Microsoft Office ProPlus (Word, Excel, PowerPoint &amp; more) downloads for UGA students.</ouc:div>
+		<ouc:div label="feature-link" group="Template2" button="hide"><ouc:multiedit type="text" prompt="Feature Link" alt="Enter an external URL or choose a file via the selector."/>http://ugamail.uga.edu/#office365</ouc:div>
+		<ouc:div label="feature-image" group="Template2" button="hide"><ouc:multiedit type="image" prompt="Feature Image" alt="Image that will displayed to the right of the description, dimensions 420px X 250px."/><img src="https://placeimg.com/640/480/animals" alt="More Services with One Account" /></ouc:div>
+	</feature>
+
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content"><ouc:editor csspath="/_resources/ou/editor/home.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/><table class="threexnine-table" style="width: 100%;"><caption style="text-align: center; font-weight: bold;">Link to Sections via the section's _props.pcf file for image, and section link.</caption>
+		<tbody>
+			<tr>
+				<td><strong><a href="{{f:18817591}}">Section</a></strong>
+					<ul>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</td>
+				<td><strong><a href="{{f:18817591}}">Section</a></strong>
+					<ul>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</td>
+				<td><strong><a href="{{f:18817591}}">Section</a></strong>
+					<ul>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><strong><a href="{{f:18817591}}">Section</a></strong>
+					<ul>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</td>
+				<td><strong><a href="{{f:18817591}}">Section</a></strong>
+					<ul>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</td>
+				<td><strong><a href="{{f:18817591}}">Section</a></strong>
+					<ul>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td><strong><a href="{{f:18817591}}">Section</a></strong>
+					<ul>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</td>
+				<td><strong><a href="{{f:18817591}}">Section</a></strong>
+					<ul>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</td>
+				<td><strong><a href="{{f:18817591}}">Section</a></strong>
+					<ul>
+						<li><a href="#">Item</a></li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+		</table></ouc:div>
+
+	<ouc:div label="leftcontent" group="Template2" button-text="Left Content"><ouc:editor csspath="/_resources/ou/editor/home.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="leftcolumn"/><h2>Welcome!</h2>
+		<p>Fusce id leo id mi efficitur placerat sit amet eget lorem. Cras ultricies metus sem, vitae cursus metus fermentum quis. Donec sagittis, nisi tristique tincidunt mollis, odio magna aliquam libero, sit amet laoreet ex velit vitae urna. Proin dolor lectus, aliquam nec magna id, tempor lacinia urna.</p>
+	</ouc:div>
+	<ouc:div label="middlecontent" group="Template2" button-text="Middle Content"><ouc:editor csspath="/_resources/ou/editor/home.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="leftcolumn"/>{{a:149940}}</ouc:div>
+	<ouc:div label="rightcontent" group="Template2" button-text="Right Content"><ouc:editor csspath="/_resources/ou/editor/home.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="rightcontent"/><ul class="menu nav nav-list">
+		<li class="first leaf menu-mlid-2324"><a href="/contact/">Contact</a></li>
+		<li><a href="/about/calendar.html">Events Calendar</a></li>
+		<li><a href="/directory/">Meet our Staff</a></li>
+		</ul>
+	</ouc:div>
+</document>

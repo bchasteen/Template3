@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/interior.xsl" title="Interior Page" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+	
+	<ouc:properties label="config">
+		<parameter name="breadcrumb" type="text" group="Template2" prompt="Page Breadcrumb" alt="Used to calculate page title. Index pages use local _props.pcf breadcrumb.">Contact Us</parameter>
+		<parameter name="layout" type="select" group="Template2" prompt="Page Layout" alt="Select a page layout.">
+<option value="full-width" selected="false">Full Width</option>
+<option value="two-column" selected="true">Two Column</option></parameter>
+		<parameter name="gallery-type" type="select" group="Template2" prompt="Gallery" alt="Select an LDP type to display, if a gallery asset is added to page.">
+<option value="pretty" selected="true">Pretty Photo</option></parameter>
+		<parameter name="protection" type="select" group="Template2" prompt="Page Protection" alt="Select Page Protection">
+<option value="all-myids" selected="false">All MyIDs</option>
+<option value="none" selected="true">No Protection</option></parameter>
+	</ouc:properties>
+	
+	<ouc:info><tcf>/_resources/ou/templates/interior.tcf</tcf><tmpl>/_resources/ou/templates/interior.tmpl</tmpl></ouc:info>
+	<ouc:div label="leftcolumn" group="Template2" button-text="Left Column"><ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="leftcolumn"/></ouc:div>
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content"><ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/>{{a:140550}}
+<p>&nbsp;</p>
+<p>&nbsp;</p></ouc:div>
+</document>

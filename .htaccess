@@ -1,0 +1,50 @@
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+AddType application/x-httpd-php .php .php3 .htm .html
+
+ErrorDocument 403 http://eits-demo3.domain-account.com//_resources/error_docs/403.html
+ErrorDocument 404 http://eits-demo3.domain-account.com//_resources/error_docs/404.html
+ErrorDocument 500 http://eits-demo3.domain-account.com//_resources/error_docs/500.html
+
+<FilesMatch ".(eot|ttf|otf|woff)">
+	Header set Access-Control-Allow-Origin: http://a.cms.omniupdate.com
+</FilesMatch>
+
+<files .htaccess>
+    order allow,deny
+    deny from all
+</files>
+
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+	#########################
+	#  Begin Rewrite Rules
+	#########################
+	#
+	# Turn on Rewrite Engine
+	RewriteEngine on
+	RewriteBase /
+
+	#
+	# Turn on https
+	#RewriteCond %{HTTPS} off [NC]
+	#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,NE,L]	
+	
+	# Add trailing slash to url
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/|#(.*))$
+	RewriteRule ^(.*)$ $1/ [R=301,L]
+	
+	# Remove .html extension from url
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME}\.html -f
+	RewriteRule ^([^\.]+)/$ $1.html
+	
+	# Remove slash from the URL
+	RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*\.html\ HTTP/
+	RewriteRule ^(.*)\.html$ /$1 [R=301,L]
+	
+	RewriteRule ^index\.html$ / [R=301,L]
+	RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
+<IfModule mod_rewrite.c>

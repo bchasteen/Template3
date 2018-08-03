@@ -1,0 +1,21 @@
+/*called during edit mode*/
+
+/* just edit styles */
+.ou-justedit-region.mce-content-body.mce-edit-focus {
+	padding: 5px;
+	width: 100%;
+}
+
+#news_column > .ou-justedit-region {
+	padding: 10px;
+	width: 178px;
+}
+
+#news_column > .ou-justedit-region ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+#news_column > .ou-justedit-region li {
+	margin-bottom: 20px;
+}

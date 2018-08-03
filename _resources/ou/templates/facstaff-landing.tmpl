@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/directory/landing.xsl" title="Interior Page" extension="html"?>
+<?pcf-stylesheet path="/_resources/xsl/directory/rss-people.xsl" title="Template2 RSS Listing" extension="xml"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<headcode>
+		<link rel="stylesheet" type="text/css" href="{{f:18817498}}"/>
+	</headcode> <!-- before closing head tag -->
+	<bodycode>{{a:143546}}</bodycode> <!-- after opening body tag -->
+	<footcode>
+		<script type="text/javascript" src="/_resources/js/datatables/datatables.min.js"></script>
+		<script>$(document).ready(function(){ $('.directory').DataTable({ "paging":false, "info": false}); });</script>
+	</footcode> <!-- before closing body tag -->
+	
+	<ouc:properties label="config">
+		<parameter name="layout" type="select" group="Template2" prompt="Page Layout" alt="Select a page layout.">
+			<!--%echo var="layout" encoding="none" -->
+		</parameter>
+		<parameter name="show-category" type="checkbox" prompt="Category Column">
+			<option selected="true" value="true">Show Category</option>
+		</parameter>
+		<parameter name="show-address" type="checkbox" prompt="Address Column">
+			<option selected="true" value="true">Show Address/Room #</option>
+		</parameter>
+		<parameter name="gallery-type" type="select" group="Template2" prompt="Gallery" alt="Select an LDP type to display, if a gallery asset is added to page.">
+			<!--%echo var="gallery-type" encoding="none" -->
+		</parameter>
+		<parameter name="protection" type="select" group="Template2" prompt="Page Protection" alt="Select Page Protection">
+			<!--%echo var="protection" encoding="none" -->
+		</parameter>
+	</ouc:properties>
+	
+	<ouc:info><tcf><!--%echo var="tcf-file" --></tcf><tmpl>/_resources/ou/templates/landing.tmpl</tmpl></ouc:info>
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/></ouc:div>
+	<ouc:div label="leftcolumn" group="Template2" button-text="Left Column">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="leftcolumn"/></ouc:div>
+	<ouc:div label="rightcolumn" group="Template2" button-text="Right Column">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="rightcolumn"/></ouc:div>
+</document>

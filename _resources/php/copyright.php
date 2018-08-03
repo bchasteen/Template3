@@ -1,0 +1,1 @@
+<?php echo (new DateTime("NOW", new DateTimeZone("America/New_York")))->format("Y"); ?>

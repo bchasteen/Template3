@@ -1,0 +1,23 @@
+<form name="sentMessage" class="well" id="contactForm">
+	<div class="control-group">
+		<div class="controls">
+			<label for="name" class="sr-only sr-only-focusable">Full name:</label>
+			<input type="text" class="form-control" placeholder="Full Name" id="name" required="true" aria-required="true" data-validation-required="required" message="Please enter your name"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<label for="email" class="sr-only sr-only-focusable">Email:</label>
+			<input type="email" class="form-control" placeholder="Email" id="email" required="true" aria-required="true" data-validation-required="required" message="Please enter your email"/>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<label for="message" class="sr-only sr-only-focusable">Message:</label>
+			<textarea rows="10" cols="100" class="form-control" placeholder="Message" id="message" required="true" aria-required="true" data-validation-required="required" message="Please enter your message" minlength="5" data-validation-minlength-message="Min 5 characters" maxlength="999"></textarea>
+		</div>
+	</div>
+	<div id="success">&nbsp;</div>
+	<button type="submit" class="btn btn-primary">Send</button>
+	<br/>
+</form>

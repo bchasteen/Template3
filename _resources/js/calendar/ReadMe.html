@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+		<title>Javascript Calendar</title>
+		<link href="{{f:18817357}}" rel="stylesheet">
+		<link href="{{f:18817503}}" rel="stylesheet">
+	</head>
+	<body><article class="container">
+<h2>Javascript RSS Calendar</h2>
+<h3>Calendar and Calendar Events Options</h3>
+		<ul>
+			<li>feed: location of the xml feed. The feed must end with ".xml". Feed can also be located on another website.</li>
+			<li>maxEvents: maximum number of events to display for the events list.</li>
+			<li>eventsRedirect: url where the calendar events are displayed. Used only for pages where there is a calendar displayed and no events and you want to send the user to the separate full calendar page upon clicking on a day.</li>
+			<li>eventStartDate - Initial Events Start Date (should be either the default Date or the first day of the current month).</li>
+			<li>eventNumberOfDays - Initial Number of Events to Display. The default is 7.</li>
+			<li>sort: either "asc" or "desc" to sort the events in ascending or descending order.</li>
+			<li>showEventDesc - Either "true" or "false". Whether to show the description or not</li>
+			<li>eventDescLength - Length of characters in the description to display before showing a Read More link.</li>
+			<li>showHeading - Either "true" or "false". Whether to show or hide the events heading.</li>
+		</ul>
+<h3>Calendar Language Options</h3>
+<ul>
+<li>eventStartHeading - The heading to display in the events when the calendar first loads</li>
+<li>dayList - Days of the week abbreviations (comma delimited, sun - sat)</li>
+<li>monthNames - Months of the Year (comma delimited)</li>
+<li>monthUpTitle - Text for screen reader</li>
+<li>monthDnTitle - Text for screen reader</li>
+<li>noEventsMsg - Default message if there are no events to display.</li>
+<li>maxEvents - Max number of items per page</li>
+</ul>
+<h3>Assets</h3>
+<h4>Calendar Assets</h4>
+<ul>
+<li>
+<h5>Calendar (designed to have events on the same page)</h5>
+<p class="bg-info">You must give at least a "feed" attribute to let the script know where to look for the items.</p>
+<pre><code>&lt;calendar feed="http://status.uga.edu/rss/feed.xml" maxEvents="5" eventNumberOfDays="12" /&gt;</code></pre>
+</li>
+<li>
+<h5>Calendar Only</h5>
+<p class="bg-info">You must give at least a "feed" and "eventsRedirect" attribute to let the script know where to look for the items and where to go to when event days are clicked.</p>
+<pre><code>&lt;calendar-only feed="http://status.uga.edu/rss/feed.xml" maxEvents="5" eventNumberOfDays="12" eventsRedirect="/about/calendar/" /&gt;</code></pre>
+</li>
+</ul>
+<h4>Events Assets</h4>
+<ul>
+<li>
+<h5>Events Only</h5>
+<p class="bg-info">Note: This asset won't work without attributes giving the Javascript options.</p>
+<pre><code>&lt;calendar-events-only feed="http://status.uga.edu/rss/feed.xml" 
+	maxEvents="5" 
+	eventNumberOfDays="12"
+	showPagination="true"
+	eventDescLength="100" /&gt;</code></pre>
+</li>
+<li>
+<h5>Events (designed to have a calendar on the same page)</h5>
+<p class="bg-info">Note: there are no attributes to this tag.</p>
+<pre><code>&lt;calendar-events /&gt;</code></pre>
+</li>
+</ul>
+<h3>PCF File Example</h3>
+<p class="bg-info">
+Here is a basic example. This is just a basic interior page with a calendar asset and an events asset inserted.  
+	If you are inserting both a calendar and an events asset, use the "Calendar (designed to have events on the same page)" asset and the
+	"Events Assets".  Otherwise you want to use either the "Calendar Only" or the "Events Only" asset.
+</p>
+		<p class="bg-info">It is also highly recommended to install and use the Assets gadget created by OU and available in their marketplace.</p>
+<pre style="width:100%;display:inline-block;overflow:hidden;">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?pcf-stylesheet path="/_resources/xsl/interior.xsl" title="Interior Page" extension="html"?&gt;
+&lt;!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"&gt;
+&lt;document xmlns:ouc="http://omniupdate.com/XSL/Variables"&gt;
+	&lt;headcode&gt;&lt;/headcode&gt; &lt;!-- before closing head tag --&gt;
+	&lt;bodycode&gt;&lt;/bodycode&gt; &lt;!-- after opening body tag --&gt;
+	&lt;footcode&gt;&lt;/footcode&gt; &lt;!-- before closing body tag --&gt;
+	&lt;ouc:properties label="config"&gt;
+		&lt;parameter name="breadcrumb" type="text" group="Template2" prompt="Page Breadcrumb" alt="Used to calculate page title. Index pages use local _props.pcf breadcrumb."&gt;Calendar&lt;/parameter&gt;
+		&lt;parameter name="layout" type="select" group="Template2" prompt="Page Layout" alt="Select a page layout."&gt;
+			&lt;option value="full-width" selected="false"&gt;Full Width&lt;/option&gt;
+			&lt;option value="two-column" selected="true"&gt;Two Column&lt;/option&gt;
+		&lt;/parameter&gt;
+		&lt;parameter name="gallery-type" type="select" group="Template2" prompt="Gallery" alt="Select an LDP type to display, if a gallery asset is added to page."&gt;
+			&lt;option value="pretty" selected="false"&gt;Pretty Photo&lt;/option&gt;
+		&lt;/parameter&gt;
+		&lt;parameter name="protection" type="select" group="Template2" prompt="Page Protection" alt="Select Page Protection"&gt;
+			&lt;option value="all-myids" selected="false"&gt;All MyIDs&lt;/option&gt;
+			&lt;option value="none" selected="true"&gt;No Protection&lt;/option&gt;
+		&lt;/parameter&gt;
+	&lt;/ouc:properties&gt;
+	&lt;ouc:info&gt;&gt;&lt;tcf&gt;/_resources/ou/templates/interior.tcf&lt;/tcf&gt;&lt;tmpl&gt;/_resources/ou/templates/interior.tmpl&lt;/tmpl&gt;&lt;/ouc:info&gt;
+	&lt;ouc:div label="autopublish" group="Administrators" button-text="Auto Publish Asset"&gt;
+		&lt;ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/&gt;&lt;/ouc:div&gt;
+	&lt;ouc:div label="leftcolumn" group="Template2" button-text="Left Column"&gt;&lt;ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="leftcolumn"/&gt;
+	<code class="bg-info">Paste Calendar Asset Here</code>
+	&lt;/ouc:div&gt;
+	&lt;ouc:div label="maincontent" group="Template2" button-text="Main Content"&gt;&lt;ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/&gt;
+	<code class="bg-info">Paste Calendar Events Asset Here</code>
+	&lt;/ouc:div&gt;
+&lt;/document&gt;
+</pre>
+</article><!-- ouc:button --><a id="de" href="http://a.cms.omniupdate.com/10?skin=uga&amp;account=chasteen&amp;site=Template1&amp;action=de&amp;path=/_resources/js/calendar/ReadMe.html" >&#160;&#160;&#160;&#160;</a><!-- /ouc:button --></body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/social.xsl" title="Site Navigation" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">	
+	<headcode>
+		<script src="https://use.fontawesome.com/499828d64f.js"></script>
+		<style>
+			.social-links-top {
+			display:inline-block;
+			}
+			
+			.social-links-top a {
+			color:#554f47;
+			text-decoration:none;
+			}
+			.social-links-top ul {
+			list-style:none;
+			}
+			
+			.social-links-top ul li {
+			display:inline-block;
+			padding:0 5px 0 5px;
+			}
+			
+			.platform-name {
+			position:absolute;
+			width:1px;
+			height:1px;
+			padding:0;
+			margin:-1px;
+			overflow:hidden;
+			clip:rect(0,0,0,0);
+			border:0;
+			}
+			
+		</style>
+	</headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+
+	<ouc:properties label="config">
+		<parameter name="show-facebook" type="checkbox" prompt="Show Facebook Icon">
+<option value="true" selected="true"></option>
+</parameter>
+		<parameter name="facebook-icon" group="Everyone" type="text" prompt="Facebook URL" alt="Enter the website address for your Facebook icon.">http://www.uga.edu/</parameter>
+		<parameter name="show-twitter" type="checkbox" prompt="Show Twitter Icon">
+<option value="true" selected="true"></option>
+</parameter>
+		<parameter name="twitter-icon" group="Everyone" type="text" prompt="Twitter URL" alt="Enter the website address for your Twitter icon."></parameter>
+		<parameter name="show-instagram" type="checkbox" prompt="Show Instagram Icon">
+<option value="true" selected="true"></option>
+</parameter>
+		<parameter name="instagram-icon" group="Everyone" type="text" prompt="Instagram URL" alt="Enter the website address for your Instagram icon."></parameter>
+		<parameter name="show-snapchat" type="checkbox" prompt="Show Snapchat Icon">
+<option value="true" selected="true"></option>
+</parameter>
+		<parameter name="snapchat-icon" group="Everyone" type="text" prompt="Snapchat URL" alt="Enter the website address for your Snapchat icon."></parameter>
+		<parameter name="show-youtube" type="checkbox" prompt="Show YouTube Icon">
+<option value="true" selected="true"></option>
+</parameter>
+		<parameter name="youtube-icon" group="Everyone" type="text" prompt="YouTube URL" alt="Enter the website address for your YouTube icon."></parameter>
+		<parameter name="show-linkedin" type="checkbox" prompt="Show LinkedIn Icon">
+<option value="true" selected="true"></option>
+</parameter>
+		<parameter name="linkedin-icon" group="Everyone" type="text" prompt="Facebook URL" alt="Enter the website address for your LinkedIn icon."></parameter>
+	</ouc:properties>
+
+</document>

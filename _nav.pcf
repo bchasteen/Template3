@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/navigation/autonav.xsl" title="Side Navigation" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+
+	<ouc:properties label="config">
+		<parameter name="ignore-files" group="Administrators" type="text" prompt="Files to ignore"></parameter>
+		<parameter name="ignore-dirs" group="Administrators" type="text" prompt="Directories to ignore"></parameter>
+		<parameter name="directory-order" group="Template2" type="text" prompt="Root Directory order" alt="If sorting directories, enter their names separated by commas.  Directories are always listed before files."></parameter>
+	</ouc:properties>
+	<ouc:div label="autopublish" group="Administrators" button-text="Auto Publish Asset"><ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/></ouc:div>
+	<ouc:div label="leftcolumn" group="Template2" button-text="Left Content"><ouc:editor csspath="/_resources/css/bootstrap.min.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="leftcolumn"/></ouc:div>
+</document>

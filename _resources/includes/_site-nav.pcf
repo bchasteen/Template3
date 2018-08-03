@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/navigation/sitenav.xsl" title="Site Navigation" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+
+	<ouc:properties label="config">
+		<!-- Properties -->
+		<parameter section="Main Navigation" name="use-menu" group="Template2" type="select" prompt="Menu to use">
+<option value="yamm" selected="false">Yamm</option>
+<option value="bootstrap" selected="true">Bootstrap</option>
+<option value="simple" selected="false">Simple</option>
+</parameter>
+		<parameter name="use-generated-nav" group="Template2" type="checkbox" prompt="Auto-create Nav">
+<option value="true" selected="true">Use Auto-created nav</option>
+</parameter>
+		<parameter name="ignore-files" group="Template2" type="text" prompt="Files to ignore"></parameter>
+		<parameter name="ignore-dirs" group="Template2" type="text" prompt="Directories to ignore"></parameter>
+		<parameter name="hide-children" group="Template2" type="text" prompt="Hide all children" alt="List all directories (separated by commas) for which you want to hide all children."></parameter>
+		<parameter name="directory-order" group="Template2" type="text" prompt="Root Directory order" alt="If sorting directories, enter their names separated by commas.  Directories are always listed before files."></parameter>
+		<parameter section="Side Navigation" name="use-sidenav" group="Template2" type="select" prompt="Sidenav to use">
+<option value="simple-nav" selected="false">Simple Nav</option>
+<option value="script-nav" selected="true">Tree Nav</option>
+<option value="auto-nav" selected="false">Auto-Generated Tree Nav</option>
+</parameter>
+	</ouc:properties>
+	<ouc:div label="autopublish" group="Template2" button-text="Auto Publish Asset"><ouc:editor csspath="" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="other"/>{{a:145468}}</ouc:div>	
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content"><ouc:editor csspath="/_resources/ou/editor/maincontent.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/><p><a href="http://uga.edu">UGA</a></p></ouc:div>
+</document>

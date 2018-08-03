@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/news/news.xsl" title="RSS Interior Page" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+	
+	<ouc:properties label="config">
+		<parameter name="breadcrumb" type="text" group="Template2" prompt="Breadcrumb/Heading" alt="Heading displayed above article date. Breadcrumb displayed above the footer. Used to calculate page title. Index pages use local _props.pcf breadcrumb.">NASA to Preview Pair of Upcoming US Spacewalks, Provide Live Coverage</parameter>
+		<parameter name="date-time" type="datetime" format="iso" prompt="Article Date" alt="Selct a date to display below the heading. Output format 'Monday, March 16, 2015'" group="Template2">Monday, May 7, 2018 1:51:30 PM PDT</parameter>
+		<parameter name="layout" type="select" group="Template2" prompt="Page Layout" alt="Select a page layout.">
+<option value="full-width" selected="true">Full Width</option>
+<option value="two-column" selected="false">Two Column</option></parameter>
+		<parameter name="gallery-type" type="select" group="Template2" prompt="Gallery" alt="Select an LDP type to display, if a gallery asset is added to page."></parameter>		
+		<parameter name="protection" type="select" group="Template2" prompt="Page Protection" alt="Select Page Protection">
+<option value="all-myids" selected="true">All MyIDs</option>
+<option value="none" selected="false">No Protection</option></parameter>
+	</ouc:properties>
+	
+	<ouc:info><tcf>/_resources/ou/templates/rss-article.tcf</tcf><tmpl>/_resources/ou/templates/rss-article.tmpl</tmpl></ouc:info>
+	
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/></ouc:div>
+	
+</document>

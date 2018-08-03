@@ -1,0 +1,18 @@
+/* CALENDAR */
+.buttons{}.buttons button{position:relative;padding:.5 1em;font-size:1.5rem}
+.buttons .year-label{font-size:2rem;padding:0 1em}
+.cal-events-container h4{margin:0;padding:0}
+.cal-events-container li{margin-bottom:15px;border-bottom:1px solid #def}
+.calendar-table{width:100%;min-height:350px;border-collapse:collapse}
+.calendar-table td a{color:#ba0c2f;font-weight:bold}
+.mainheading{width:100%;height:50px;position:relative;font-weight:bold;font-size: 1.7rem}
+.mainheading:after{content:""; display:table}
+.mainheading #calendar-monthyear-title{}
+.mainheading, .calendar-table th, .cal{text-align:center}
+.calendar-table th{height:14%}.calendar-table tr{}
+.pub-date{font-size:15px;font-size:1.5rem;font-weight:500}
+.prev-month, .next-month{position:absolute;top:0}
+.prev-month{left:0}.next-month{right:0}.cal{height:14%;padding:5px;border:1px solid #eee}
+.prev, .next, .calendar-table td.prev a, .calendar-table td.next a{color:#BBB}
+.calendar-table td.curr a, .curr{font-weight:500}.today{background-color:#ffc}.calendar-event li{margin-bottom:15px;border-bottom: 1px solid #eee}
+.table.calendar-table>tbody>tr>td,.table.calendar-table>tbody>tr>th,.table.calendar-table>tfoot>tr>td,.table.calendar-table>tfoot>tr>th,.table.calendar-table>thead>tr>td,.table.calendar-table>thead>tr>th{padding:5px;width: 14.2857%}

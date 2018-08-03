@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/news/news-listing.xsl" title="RSS Interior Page" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+	
+	<ouc:properties label="config">
+		<parameter name="rss-feed" group="Template2" prompt="RSS Feed" alt="Select the RSS feed to display. Default is directory feed." type="filechooser" path="/_resources/rss" lockout="yes">/_resources/rss/news.xml</parameter>
+		<parameter name="rss-limit" group="Template2" prompt="Items Per Page" alt="Define the number of items to display. Default limit is 10.">10</parameter>
+		<parameter name="rss-pagination" type="checkbox" group="Template2" prompt="Show Pagination" alt="Show or hide pagination links">
+			
+<option value="true" selected="true">Show Pagination</option>
+		</parameter>
+		<parameter name="layout" type="select" group="Template2" prompt="Page Layout" alt="Select a page layout.">
+<option value="full-width" selected="false">Full Width</option>
+<option value="two-column" selected="true">Two Column</option></parameter>
+		<parameter name="gallery-type" type="select" group="Template2" prompt="LDP Type" alt="Select an LDP type to display, if a gallery asset is added to page."></parameter>
+		<parameter name="protection" type="select" group="Template2" prompt="Page Protection" alt="Select Page Protection">
+<option value="all-myids" selected="false">All MyIDs</option>
+<option value="none" selected="true">No Protection</option></parameter>
+	</ouc:properties>
+	
+	<ouc:info><tcf>/_resources/ou/templates/rss-section.tcf</tcf><tmpl>/_resources/ou/templates/rss-landing.tmpl</tmpl></ouc:info>
+	<ouc:div label="autopublish" group="Administrators" button-text="Auto Publish Asset">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/></ouc:div>
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/>
+	</ouc:div>
+	<ouc:div label="leftcolumn" group="Template2" button-text="Left Column">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="leftcolumn"/></ouc:div>
+	<ouc:div label="rightcolumn" group="Template2" button-text="Right Column">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="rightcolumn"/></ouc:div>
+</document>

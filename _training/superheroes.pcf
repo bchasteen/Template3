@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_training/xsl/superheroes.xsl" title="HTML" extension="html"?>
+
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+	
+	<ouc:properties label="metadata">
+		<title>XSL Data</title>
+		<meta name="Description" content="PCF Starter Description" />
+		<meta name="Keywords" content="PCF Starter Keywords" />
+	</ouc:properties>
+	
+	<ouc:properties label="config">
+		<parameter name="heading" type="text" prompt="Page Heading" alt="H1 on page.">XSL Data</parameter>
+		<parameter section="Page Configuration" group="Admins" name="layout" type="select" prompt="Page Layout" alt="Choose the layout for the page.">
+<option value="1" selected="false">One Column</option>
+<option value="2" selected="true">Two Column</option>
+</parameter>
+		<parameter name="contactinfo" type="asset" tags="contact" prompt="Contact Block" alt="Choose the asset that contains the appropriate contact information.">{{a:88183}}</parameter>
+		
+		<parameter name="file" type="filechooser" dependency="s-tag" source="staging" path="/_training/" lockout="yes" filter="pcf" prompt="Filechooser" alt="Choose a file.">{{s:12128937}}</parameter>
+	</ouc:properties>
+	
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content">
+		<ouc:editor wysiwyg-class="maincontent"/>
+		<p>Content goes here...</p>
+		<p>More stuff!</p>
+	</ouc:div>
+	
+</document>

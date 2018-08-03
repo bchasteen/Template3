@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/error.xsl" title="Error Page" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+	
+	<ouc:properties label="config">
+		<parameter name="breadcrumb" type="text" group="Template2" prompt="Page Breadcrumb" alt="Used to calculate page title. Index pages use local _props.pcf breadcrumb.">403 - Forbidden</parameter>
+	</ouc:properties>
+	
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/>
+		<p>You don't have permission to access this directory.</p>
+	</ouc:div>
+	
+</document>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_training/xsl/interior.xsl" title="HTML" extension="html"?>
+
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+	
+	<ouc:properties label="metadata">
+		<title>PCF Starter</title>
+		<meta name="Description" content="PCF Starter Description" />
+		<meta name="Keywords" content="PCF Starter Keywords" />
+	</ouc:properties>
+	
+	<ouc:properties label="config">
+		<parameter name="heading" type="text" prompt="Page Heading" alt="H1 on page.">PCF Starter Heading</parameter>
+		<parameter section="Page Configuration" group="Admins" name="layout" type="select" prompt="Page Layout" alt="Choose the layout for the page.">
+<option value="1" selected="false">One Column</option>
+<option value="2" selected="true">Two Column</option>
+</parameter>
+		<parameter name="contactinfo" type="asset" tags="contact" prompt="Contact Block" alt="Choose the asset that contains the appropriate contact information."></parameter>
+		
+		<parameter name="file" type="filechooser" dependency="s-tag" source="staging" path="/_training/" lockout="yes" filter="pcf" prompt="Filechooser" alt="Choose a file."></parameter>
+	</ouc:properties>
+	
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content"><ouc:editor csspath="/_training/rkiffe/editor/wysiwyg.css" cssmenu="/_training/rkiffe/editor/styles.txt" wysiwyg-class="maincontent"/><p>Content goes here... <font>Font Contents</font></p>
+<table class="ou-accordion" style="width:100%"><caption>Accordion Widget</caption>
+<tbody>
+<tr>
+<th>&nbsp;</th>
+<td>
+<p>Title 1 ...</p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td>
+<p>Content 1</p>
+<p>sdfa asdf</p>
+<p>a sdfas df</p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td>
+<p>Title 2</p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;</th>
+<td>
+<p>Content 2</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>More stuff!</p>
+<table class="accordion" style="width:100%">
+<thead>
+<tr>
+<th>Title</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title 1</td>
+<td>
+<p>Content1 ...</p>
+</td>
+</tr>
+<tr>
+<td>Title 2</td>
+<td>
+<p>Content 2</p>
+<p>sdfa asdf</p>
+<p>a sdfas df</p>
+</td>
+</tr>
+<tr>
+<td>test</td>
+<td>
+<p>&nbsp;ttsefsdf</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</ouc:div>
+	
+</document>

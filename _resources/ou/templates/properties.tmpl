@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?pcf-stylesheet path="/_resources/xsl/properties.xsl" title="Properties" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/Variables">
+	<ouc:properties label="config">
+		<parameter name="breadcrumb" type="text" group="Template2" prompt="Section Title" alt="Used for the Section Breadcrumb, and Section Heading."><!--%echo var="breadcrumb" --></parameter>
+		<parameter name="image" type="filechooser" group="Template2" prompt="Section Image" alt="Select the image associated with this section." path="/_resources/images/section_images" lockout="yes"><!--%echo var="image" --></parameter>
+		<parameter name="use-sidenav" type="select" group="Template2" prompt="Sidenav to use" alt="Select a Sidenav type or leave as Default to use the default menu"><!--%echo var="use-sidenav" encoding="none" --></parameter>
+	</ouc:properties>	
+</document>

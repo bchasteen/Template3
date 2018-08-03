@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pcf-stylesheet path="/_resources/xsl/calendar/event.xsl" title="Event Page" extension="html"?>
+<!DOCTYPE document SYSTEM "http://commons.omniupdate.com/dtd/standard.dtd"> 
+
+<document xmlns:ouc="http://omniupdate.com/XSL/parameters">
+	
+	<headcode></headcode> <!-- before closing head tag -->
+	<bodycode></bodycode> <!-- after opening body tag -->
+	<footcode></footcode> <!-- before closing body tag -->
+	
+	<ouc:properties label="config">
+		<parameter name="breadcrumb" type="text" group="Template2" prompt="Page Breadcrumb" alt="Used to calculate page title. Index pages use local _props.pcf breadcrumb."><!--%echo var="breadcrumb" --></parameter>
+		<parameter name="start-date" type="datetime" format="iso" prompt="Publish/Start Date" alt="Select the Publish/Start Date"><!--%echo var="start-date" --></parameter>
+		<parameter name="end-date" type="datetime" format="iso" prompt="Event End Date" alt="Select the Event End Date (leave blank if event is only for one day)."><!--%echo var="end-date" --></parameter>
+		<parameter name="rss-feed" group="Template2" prompt="RSS Feed" alt="Select the RSS feed to display. Default is directory feed." type="filechooser" path="/rss" lockout="yes"><!--%echo var="rss-feed" --></parameter>
+		<parameter name="rss-limit" group="Template2" prompt="RSS Limit" alt="Define the number of items to display. Default limit is 5.">5</parameter>
+		<parameter name="layout" type="select" group="Template2" prompt="Page Layout" alt="Select a page layout."><!--%echo var="layout" encoding="none" --></parameter>
+		<parameter name="gallery-type" type="select" group="Template2" prompt="Gallery" alt="Select an LDP type to display, if a gallery asset is added to page."><!--%echo var="gallery-type" encoding="none" --></parameter>
+	</ouc:properties>
+	<ouc:div label="leftcolumn" group="Template2" button-text="Left Column"><ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="leftcolumn"/></ouc:div>
+	<ouc:div label="maincontent" group="Template2" button-text="Main Content">
+		<ouc:editor csspath="/_resources/ou/editor/interior.css" cssmenu="/_resources/ou/editor/styles.txt" wysiwyg-class="maincontent"/><!--%echo var="desc" encoding="none" --></ouc:div>
+</document>

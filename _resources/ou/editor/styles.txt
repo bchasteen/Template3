@@ -1,0 +1,5 @@
+.img-responsive	Responsive Image
+.button-outline	Link as Gray Button
+.pull-left padd-right	Left-Aligned Content
+.embed-responsive embed-responsive-16by9	Responsive 16x9 Video
+.embed-responsive embed-responsive-4by3	Responsive 4x3 Video

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tcf>
+	<title>Section</title>
+	
+	<variable-list>
+		<!-- general page setup -->
+		<variable section="Section Setup" name="breadcrumb" type="text" prompt="Section Breadcrumb" alt="Used to calculate page title."></variable>
+		<variable name="dirname"  prompt="Directory Name" alt="Enter the directory name that will be visible in OU Campus and in the URL. No special characters or spaces."></variable>
+		<variable name="image" type="filechooser" prompt="Section Image" alt="Select the image associated with this section." path="/_resources/images/section_images" lockout="yes"></variable>
+		<variable name="tcf-file" type="text" prompt="PCF Filename" display="no">/_resources/ou/templates/section.tcf</variable>
+		<include>_section-nav-vars.inc</include>
+		<include>_common-vars.inc</include>
+	</variable-list>
+	
+	<!-- Use this to specify a template group for the new section. -->
+	<include>_directory-list.inc</include>
+	
+	<template-list>
+		<!-- props and navigation files -->
+	    <include>_section-props.inc</include>
+		<template 
+			prompt-prefix="Page" 
+			filename="index" 
+			display-filename="no" 
+			extension="pcf" 
+			destination="{directory/}{dirname}" 
+			force-destination="yes"
+			autonav="{navigation}"
+			preferred-redirect="yes">section-landing.tmpl</template>
+		<include>_section-nav-inc.inc</include>
+	</template-list>
+
+	<navigation-list>
+		<include>_nav-list.inc</include>
+	</navigation-list>
+</tcf>
